@@ -8,7 +8,7 @@
 #define PORT 8080
 
 int main(int argc, char *argv[]) {
-    int server_fd, new_socket, max_client = 10, activity, i, valread, sd;
+    int server_fd, new_socket, max_client = 10, i, valread, sd;
     int client_socket[10] = {0};
     int opt = 1;
     int addrlen = sizeof(address);
@@ -16,8 +16,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in address;
     int buffer[1024] = {0};
     int number;
-
-    fd_set readfds;
+    
 
     if (server_fd = socket(AF_INET, SOCK_STREAM, 0) == 0) {
         perror("socket failed");
